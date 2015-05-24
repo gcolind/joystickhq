@@ -10,3 +10,40 @@
  Tags:         grid
  Text Domain:  crates-child
 */
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  color:#000;
+}
+
+h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a{
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Page Logo Styles */
+.logo a{
+  font-family: 'Press Start 2P', cursive;
+  font-size:1.5em;
+  color:#939393;
+}
+
+a:hover{
+  color:#FF5151;
+}
+
+a:hover{
+  color:#FF5151;
+}
+
+/* Post Card Styles */
+.post{
+  border-radius: 2px;
+  border:5px solid #f2f2f2;
+}
+
+/* Individual post page styles */
+.blogpage{
+  border-radius: 2px;
+  border:5px solid #f2f2f2;
+}

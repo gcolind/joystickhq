@@ -69,7 +69,7 @@ add_action( 'init', 'crates_register_my_menus' );
 
 
 // Sidebars
-  
+
 register_sidebar(array('name'=>'Sidebar', 'id'=>'sidebar',
     'before_widget' => '<div class="widget">',
     'after_widget' => '<div class="clear"></div></div>',
@@ -169,10 +169,10 @@ add_filter( 'wp_title', 'crates_wp_title', 10, 2 );
 
 
 /* Enqueue New Google Fonts */
-
+/*
 function crates_load_google_fonts() {
             wp_register_style('googleFontsMontserrat','http://fonts.googleapis.com/css?family=Montserrat:700');
-            wp_enqueue_style( 'googleFontsMontserrat'); 
+            wp_enqueue_style( 'googleFontsMontserrat');
 
             wp_register_style('googleFontsPTSans','http://fonts.googleapis.com/css?family=PT+Sans:400,700');
             wp_enqueue_style( 'googleFontsPTSans');
@@ -183,7 +183,7 @@ function crates_load_google_fonts() {
             wp_register_style('googleFontsRaleway','http://fonts.googleapis.com/css?family=Raleway:400,300,100,500,600,700,900,800');
             wp_enqueue_style( 'googleFontsRaleway');
 }
-add_action('wp_print_styles', 'crates_load_google_fonts');
+add_action('wp_print_styles', 'crates_load_google_fonts');*/
 
 
 
@@ -267,37 +267,37 @@ $GLOBALS['comment'] = $comment; ?>
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
 
 <div id="comment-<?php comment_ID(); ?>" class="comment-box">
-   
+
   <?php echo get_avatar($comment,$size='60'); ?>
-  
+
   <div class="comment-text">
-  
-    <font class="author"><?php printf(__('%s'), comment_author_link()) ?></font> 
-    
+
+    <font class="author"><?php printf(__('%s'), comment_author_link()) ?></font>
+
     <div class="clear"></div>
-    
+
     <div class="comment-text-shift">
       <?php if ($comment->comment_approved == '0') : ?>
       <div class="moderation"><p><?php _e('Your comment is awaiting moderation.') ?></p></div>
       <?php endif; ?>
-    
+
       <?php comment_text() ?>
 
 
 <div class="commentmeta">
-<?php comment_date('j M Y') ?> - 
-        
+<?php comment_date('j M Y') ?> -
+
 <?php comment_reply_link(array_merge( $args, array('reply_text' => 'Reply', 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 
 <?php edit_comment_link('Edit',' - '); ?>
 </div>
 
     </div>
-    
+
   </div>
   <div class="clear"></div>
 
-</div>  
+</div>
 
 <?php }
 add_action( 'crates_comments', 'crates_comment_template' );
@@ -364,12 +364,12 @@ function crates_62742_comment_placeholders( $fields )
 
 
 function crates_comment_field($comment_field) {
- 
-    $comment_field = 
+
+    $comment_field =
         '<p class="comment-form-comment">
             <textarea required placeholder="Comment" id="comment" name="comment" cols="455" rows="8" aria-required="true"></textarea>
         </p>';
- 
+
     return $comment_field;
 }
 add_filter('comment_form_field_comment','crates_comment_field');
@@ -384,7 +384,7 @@ add_filter('comment_form_field_comment','crates_comment_field');
  * Include the TGM_Plugin_Activation class.
  */
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
- 
+
 add_action( 'crates_register', 'crates_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
@@ -399,13 +399,13 @@ add_action( 'crates_register', 'crates_register_required_plugins' );
  * TGM_Plugin_Activation class constructor.
  */
 function crates_register_required_plugins() {
- 
+
     /**
      * Array of plugin arrays. Required keys are name, slug and required.
      * If the source is NOT from the .org repo, then source is also required.
      */
     $plugins = array(
- 
+
         array(
 
             'name'                  => 'Symple Shortcodes', // The plugin name
@@ -465,7 +465,7 @@ function crates_register_required_plugins() {
             'external_url'          => '', // If set, overrides default API URL and points to an external URL
 
         ),
-        
+
         array(
 
             'name'                  => 'WP-PageNavi', // The plugin name
@@ -519,12 +519,12 @@ function crates_register_required_plugins() {
             'source' => 'http://downloads.wordpress.org/plugin/wordpress-seo.latest-stable.zip',
 
         ),
- 
+
     );
- 
+
     // Change this to your theme text domain, used for internationalising strings
     $theme_text_domain = 'crates';
- 
+
     /**
      * Array of configuration settings. Amend each line as needed.
      * If you want the default strings to be available under your own theme domain,
@@ -561,8 +561,7 @@ function crates_register_required_plugins() {
             'complete'                                  => __( 'All plugins installed and activated successfully. %s', $theme_text_domain ) // %1$s = dashboard link
         )
     );
- 
-    crates( $plugins, $config );
- 
-}
 
+    crates( $plugins, $config );
+
+}
